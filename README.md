@@ -1,11 +1,15 @@
-<h3>How to run program</h3>
-<hr>
+<h2>Points Assignment</h2>
 
-Backend
+- Install Java 8, Node.js 8, and Yarn
+
+<hr>
+<h3>How to run program</h3>
+
+Backend:
 
 `./mvnw spring-boot:run`
 
-Frontend
+Frontend:
 
 `cd src/main/ui/app/`
 

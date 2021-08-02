@@ -24,7 +24,7 @@ class ClientController {
 
     @GetMapping("/travel-logs")
     Collection<TravelLog> getTravelLogs() {
-        log.info("Request to update travel logs");
+        log.info("Request to get all travel logs");
         return travelLogRepository.findAll();
     }
 
