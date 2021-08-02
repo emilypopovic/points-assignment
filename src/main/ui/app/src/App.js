@@ -12,7 +12,6 @@ class App extends Component {
         <Switch>
           <Route path='/' exact={true} component={Home}/>
           <Route path='/empty-route' exact={true} component={TravelLogList}/>
-          <Route path='/travel-logs/:id' component={TravelLogEdit}/>
         </Switch>
       </Router>
     )

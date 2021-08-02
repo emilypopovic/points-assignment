@@ -27,13 +27,12 @@ class ClientController {
     }
 
     @GetMapping("/empty-route")
-    Collection<TravelLog> getEmptyRoute() {
-//        String thing = this.webClient.get()
-//                .uri("/empty-route")
-//                .retrieve()
-//                .bodyToMono(String.class)
-//                .block();
-        return travelLogRepository.findAll();
+    String getEmptyRoute() {
+        return this.webClient.get()
+                .uri("/empty-route")
+                .retrieve()
+                .bodyToMono(String.class)
+                .block();
     }
 
     @GetMapping("/success-no-obstacles")
