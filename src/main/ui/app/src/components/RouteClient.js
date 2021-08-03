@@ -39,10 +39,6 @@ class RouteClient extends Component {
           <hr/>
           </div>
           <div>
-            request payload
-          <hr/>
-          </div>
-          <div>
             <p>Response:</p>
             <pre>{JSON.stringify(routes, null, 2) }</pre>
           </div>

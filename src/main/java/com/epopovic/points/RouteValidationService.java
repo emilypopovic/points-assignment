@@ -7,17 +7,17 @@ public class RouteValidationService {
 
     public RouteValidationService() {}
 
-    static String validateRoute(RouteObject routeObject) {
+    static String validateRoute(RouteResponse routeResponse) {
 
-        assert routeObject != null;
-        TrackObject[] tracksObject = routeObject.getTrack();
-        TravelLogObject[] travelLogsObject = routeObject.getTravelLog();
+        assert routeResponse != null;
+        List<TrackObject> tracksObject = routeResponse.getRoute().getTrack();
+        List<TravelLogObject> travelLogsObject = routeResponse.getRoute().getTravelLog();
 
         HashMap<Integer, String[]> obstacleKeyMap = new HashMap<>();
 
         //check for empty travel log with obstacles
         //for each entry in obstacleMap check if there is an obstacle in start lane "b"
-        if(travelLogsObject == null && tracksObject != null) {
+        if(travelLogsObject.isEmpty() && !tracksObject.isEmpty()) {
             for (TrackObject track: tracksObject) {
                 boolean result = Arrays.asList(track.getObstacles()).contains("b");
                 if (result) {
@@ -25,8 +25,10 @@ public class RouteValidationService {
                 }
                 obstacleKeyMap.put(track.getPosition(), track.getObstacles());
             }
+            return "{\"status\": \"error\", \"position\": \"what\"}";
+
         }
-        else if(travelLogsObject != null) {
+        else if(!travelLogsObject.isEmpty()) {
             //determine where the car is travelling
             //laneChange and position
             int currentLaneIndex = 1;

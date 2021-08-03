@@ -1,6 +1,15 @@
 package com.epopovic.points;
 
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Data;
+
+@Data
+@JsonAutoDetect
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class TravelLogObject {
+
     private String laneChange;
     private int position;
 
