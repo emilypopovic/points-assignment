@@ -11,7 +11,24 @@ class Home extends Component {
       <div>
         <AppNavbar/>
         <Container fluid>
-          <Button color="dark"><Link to="/empty-route" style={{ color: '#FFF' }}>Manage Car Routes</Link></Button>
+          <div className="div-spacing">
+            <Button spacing color="dark"><Link to="/empty-route" style={{ color: '#FFF'}}>Empty Route</Link></Button>
+          </div>
+          <div className="div-spacing">
+            <Button spacing color="dark"><Link to="/success-no-obstacles" style={{ color: '#FFF' }}>Success No Obstacles Route</Link></Button>
+          </div>
+          <div className="div-spacing">
+            <Button spacing color="dark"><Link to="/success-with-obstacles" style={{ color: '#FFF' }}>Success With Obstacles Route</Link></Button>
+          </div>
+          <div className="div-spacing">
+            <Button spacing color="dark"><Link to="/failure-out-of-bounds" style={{ color: '#FFF' }}>Failure Out of Bounds Route</Link></Button>
+          </div>
+          <div className="div-spacing">
+            <Button spacing color="dark"><Link to="/failure-hits-obstacle" style={{ color: '#FFF' }}>Failure Hits Obstacle Route</Link></Button>
+          </div>
+          <div className="div-spacing">
+            <Button spacing color="dark"><Link to="/random" style={{ color: '#FFF' }}>Random Route</Link></Button>
+          </div>
         </Container>
         <AppFooter/>
       </div>

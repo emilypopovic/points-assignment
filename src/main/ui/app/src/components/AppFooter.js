@@ -5,10 +5,12 @@ import { Container } from 'reactstrap';
 export default class AppFooter extends Component {
 	render() {
 		return(
-            <div className="fixed-bottom">
-                <Navbar color="dark">
-                     <div className="navbar-footer">Points Interview Test | Emily Popovic</div>
-                </Navbar>
+            <div className="footer-spacing">
+                <div className="fixed-bottom">
+                    <Navbar color="dark">
+                         <div className="navbar-footer">Points Interview Test | Emily Popovic</div>
+                    </Navbar>
+                </div>
             </div>
 		);
 	}

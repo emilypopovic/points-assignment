@@ -26,9 +26,17 @@
 }
 
 .navbar-footer {
-    float: left;
-    padding: 15px;
-    text-align: center;
-    width: 100%;
-    color: white;
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+  color: white;
+}
+
+.div-spacing {
+  margin-bottom: 10px;
+}
+
+.footer-spacing {
+  padding: 15px;
+  margin-top: 10px;
 }
