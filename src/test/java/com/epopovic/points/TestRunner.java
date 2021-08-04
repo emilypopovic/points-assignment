@@ -13,8 +13,5 @@ public class TestRunner {
         }
 
         System.out.println(result.wasSuccessful());
-
-        Result result2 = JUnitCore.runClasses(RouteObjectTest.class);
-
     }
 }

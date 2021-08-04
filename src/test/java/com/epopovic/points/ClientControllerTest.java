@@ -2,8 +2,6 @@ package com.epopovic.points;
 
 import org.junit.Before;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.mockito.Mockito.verify;
@@ -14,11 +12,10 @@ public class ClientControllerTest {
 
     @Before
     public void setUp() throws Exception {
-        MockitoAnnotations.initMocks(this);
     }
 
     @Test
-    void testGetTravelLogs() {
+    public void testGetTravelLogs() {
 
         //RouteObject mockedTravelLog = new RouteObject("1", "a", 0);
         //when(travelLogRepository.findById("1")).thenReturn(mockedTravelLog);
@@ -26,19 +23,24 @@ public class ClientControllerTest {
         //verify(travelLogRepository, times(1)).findById("it1");
     }
 
-    @Test
-    void testGetTravelLogsById() {
+    @Test //(expected = RuntimeException.class)
+    public void testPrintMessage() {
+        System.out.println("Inside testPrintMessage()");
     }
 
     @Test
-    void testCreateTravelLog() {
+    public void testGetTravelLogsById() {
     }
 
     @Test
-    void testUpdateTravelLog() {
+    public void testCreateTravelLog() {
     }
 
     @Test
-    void testDeleteTravelLog() {
+    public void testUpdateTravelLog() {
+    }
+
+    @Test
+    public void testDeleteTravelLog() {
     }
 }

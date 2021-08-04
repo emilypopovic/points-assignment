@@ -18,3 +18,19 @@ Frontend:
 `cd src/main/ui/app/`
 
 `yarn start`
+
+Then will open up to localhost webpage home
+
+<hr/>
+
+<h3>How to run tests via Maven</h3>
+
+`mvn clean`
+
+`mvn install`
+
+`mvn test`
+
+Run single test class:
+
+`mvn -Dtest=className test` where className is the class file you want to run the tests for

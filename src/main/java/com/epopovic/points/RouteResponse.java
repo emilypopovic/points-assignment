@@ -12,6 +12,8 @@ public class RouteResponse {
     @JsonProperty("route")
     private RouteObject route;
 
+    public RouteResponse() {}
+
     @JsonProperty("route")
     public RouteObject getRoute() {
         return route;
