@@ -1,6 +1,7 @@
 <h2>Points Assignment</h2>
 
 - Install Java 8, Node.js 8, and Yarn
+- Install Maven with Homebrew
 
 <hr>
 <h3>How to run program</h3>
@@ -11,7 +12,7 @@ Docker:
 
 Backend:
 
-`./mvnw spring-boot:run`
+`mvn spring-boot:run`
 
 Frontend:
 
@@ -19,7 +20,7 @@ Frontend:
 
 `yarn start`
 
-Then will open up to localhost webpage home
+Which will auto open up to **localhost:3000** webpage home
 
 <hr/>
 
