@@ -1,7 +1,6 @@
 package com.epopovic.points;
 
 import com.fasterxml.jackson.annotation.*;
-
 import java.util.List;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
