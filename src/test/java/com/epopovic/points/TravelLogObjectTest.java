@@ -4,9 +4,9 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-public class DatabaseLoaderTest {
+public class TravelLogObjectTest {
 
     @Test
-    void contextLoads() {
+    void testEntity() {
     }
 }
