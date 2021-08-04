@@ -17,6 +17,7 @@ class ClientController {
 
     private final Logger log = LoggerFactory.getLogger(ClientController.class);
     private final WebClient webClient;
+    private final RouteValidationService routeValidationService;
 
     public ClientController() {
         this.webClient = WebClient.builder()
@@ -25,6 +26,7 @@ class ClientController {
                 ))
                 .baseUrl("http://localhost:5000/autonomous-car/routes")
                 .build();
+        this.routeValidationService = new RouteValidationService();
     }
 
     @GetMapping("/empty-route")
@@ -38,7 +40,7 @@ class ClientController {
                 .bodyToMono(RouteResponse.class)
                 .block();
         assert clientResponse != null;
-        return RouteValidationService.validateRoute(clientResponse);
+        return this.routeValidationService.validateRoute(clientResponse);
     }
 
     @GetMapping("/success-no-obstacles")
@@ -51,7 +53,7 @@ class ClientController {
                 .bodyToMono(RouteResponse.class)
                 .block();
         assert clientResponse != null;
-        return RouteValidationService.validateRoute(clientResponse);
+        return this.routeValidationService.validateRoute(clientResponse);
     }
 
     @GetMapping("/success-with-obstacles")
@@ -64,7 +66,7 @@ class ClientController {
                 .bodyToMono(RouteResponse.class)
                 .block();
         assert clientResponse != null;
-        return RouteValidationService.validateRoute(clientResponse);
+        return this.routeValidationService.validateRoute(clientResponse);
     }
 
     @GetMapping("/failure-out-of-bounds")
@@ -77,7 +79,7 @@ class ClientController {
                 .bodyToMono(RouteResponse.class)
                 .block();
         assert clientResponse != null;
-        return RouteValidationService.validateRoute(clientResponse);
+        return this.routeValidationService.validateRoute(clientResponse);
     }
 
     @GetMapping("/failure-hits-obstacle")
@@ -90,7 +92,7 @@ class ClientController {
                 .bodyToMono(RouteResponse.class)
                 .block();
         assert clientResponse != null;
-        return RouteValidationService.validateRoute(clientResponse);
+        return this.routeValidationService.validateRoute(clientResponse);
     }
 
     @GetMapping("/random")
@@ -114,6 +116,6 @@ class ClientController {
         }
 
         assert clientResponse != null;
-        return RouteValidationService.validateRoute(clientResponse);
+        return this.routeValidationService.validateRoute(clientResponse);
     }
 }

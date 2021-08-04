@@ -7,7 +7,7 @@ public class RouteValidationService {
 
     public RouteValidationService() {}
 
-    static String validateRoute(RouteResponse routeResponse) {
+    public String validateRoute(RouteResponse routeResponse) {
         assert routeResponse != null;
         List<TrackObject> tracksObject = routeResponse.getRoute().getTrack();
         List<TravelLogObject> travelLogsObject = routeResponse.getRoute().getTravelLog();

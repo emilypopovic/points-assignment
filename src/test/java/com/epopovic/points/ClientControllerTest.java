@@ -1,46 +1,39 @@
 package com.epopovic.points;
 
-import org.junit.Before;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.when;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import static org.mockito.Mockito.verify;
-
+@ExtendWith(MockitoExtension.class)
 @SpringBootTest
 public class ClientControllerTest {
 
-
-    @Before
-    public void setUp() throws Exception {
-    }
+    @Mock
+    ClientController clientMock;
 
     @Test
-    public void testGetTravelLogs() {
+    public void testClient() throws JsonProcessingException {
+        String successString = "{\"status\": \"success\"}";
+        String failString = "{\"status\": \"error\", \"position\": 3}";
 
-        //RouteObject mockedTravelLog = new RouteObject("1", "a", 0);
-        //when(travelLogRepository.findById("1")).thenReturn(mockedTravelLog);
+        when(clientMock.getEmptyRoute()).thenReturn(successString);
+        when(clientMock.getSuccessNoObstaclesRoute()).thenReturn(successString);
+        when(clientMock.getSuccessWithObstaclesRoute()).thenReturn(successString);
+        when(clientMock.getFailureOutOfBoundsRoute()).thenReturn(failString);
+        when(clientMock.getFailureHitsObstacleRoute()).thenReturn(failString);
+        when(clientMock.getRandomRoute()).thenReturn(successString);
 
-        //verify(travelLogRepository, times(1)).findById("it1");
-    }
-
-    @Test //(expected = RuntimeException.class)
-    public void testPrintMessage() {
-        System.out.println("Inside testPrintMessage()");
-    }
-
-    @Test
-    public void testGetTravelLogsById() {
-    }
-
-    @Test
-    public void testCreateTravelLog() {
-    }
-
-    @Test
-    public void testUpdateTravelLog() {
-    }
-
-    @Test
-    public void testDeleteTravelLog() {
+        assertEquals(clientMock.getEmptyRoute(), successString);
+        assertEquals(clientMock.getSuccessNoObstaclesRoute(), successString);
+        assertEquals(clientMock.getSuccessWithObstaclesRoute(), successString);
+        assertEquals(clientMock.getFailureHitsObstacleRoute(), failString);
+        assertEquals(clientMock.getFailureOutOfBoundsRoute(), failString);
+        assertEquals(clientMock.getRandomRoute(), successString);
     }
 }
