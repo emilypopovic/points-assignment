@@ -35,3 +35,13 @@ Which will auto open up to **localhost:3000** webpage home
 Run single test class:
 
 `mvn -Dtest=className test` where className is the class file you want to run the tests for
+
+<hr/>
+
+###UI Design:
+
+![Alt text](src/main/ui/app/public/page1.png?raw=true "Page 1")
+
+![Alt text](src/main/ui/app/public/page2.png?raw=true "Page 2")
+
+![Alt text](src/main/ui/app/public/page3.png?raw=true "Page 3")
