@@ -38,7 +38,7 @@ Run single test class:
 
 <hr/>
 
-###UI Design:
+<h2>UI Design:</h2>
 
 ![Alt text](src/main/ui/app/public/page1.png?raw=true "Page 1")
 
