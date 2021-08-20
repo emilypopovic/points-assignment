@@ -8,7 +8,7 @@ export default class AppFooter extends Component {
             <div className="footer-spacing">
                 <div className="fixed-bottom">
                     <Navbar color="dark">
-                         <div className="navbar-footer">Points Interview Test | Emily Popovic</div>
+                         <div className="navbar-footer">Points Test | Emily Popovic</div>
                     </Navbar>
                 </div>
             </div>
